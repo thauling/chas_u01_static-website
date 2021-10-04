@@ -1,0 +1,66 @@
+$gradient: linear-gradient(45deg, grey, grey 50%, black);
+$color1 : lightgrey;
+
+* {
+    border: 1px solid blue;
+}
+
+html {
+    box-sizing: border-box; //content-box
+    font-size: 12px;
+    font-family:'Courier New', Courier, monospace;
+    //background-image: url("./assets/h2_wildstraw.png");
+}
+
+body {
+    font-size: 1.5rem;
+    background: $gradient;
+    width: 80%; // this (<100%) plus margin 0 (top, bottom) auto (left, right) to center content in body horizonatally 
+    margin: 0 auto;
+}
+
+header {
+    background-color: $color1;
+    //display: inline-block; //inline-box behave like inline elements, but with block-style padding and margin, width etc
+    // nav is display: block by default
+    width: inherit; //to inherit width value body parent
+    position: fixed; //locks it in-place, ie always at top of visible area, regardless of scroll position
+    top: 0;
+    min-height: 10%;
+    img {
+        max-width: 10%;
+        max-width: 10%;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    li {
+        //float: left;
+        margin-right: 1em; //top/ bottom 0, left/ right 10px?
+    }
+
+    a {
+        //display: block;
+        text-decoration: none;
+        //margin: 0 1em 1em 1em;
+    }
+   
+    .left-item {
+        margin-left: -2.2em;
+    }
+
+    .right-item {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+footer img {
+    // use a value of “auto” for the height property and adjust the width value, BEST to explicitly state BOTH properties//
+    display: inline;
+    max-height: 10%;
+    max-width: 20%;
+}
