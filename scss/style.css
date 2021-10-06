@@ -1,61 +1,150 @@
-* {
-  border: 1px solid blue;
-}
-
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 12px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, Courier, monospace;
+}
+
+html body {
+  margin: 0;
+}
+
+html body main {
+  display: block;
+}
+
+html body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+html body a {
+  background-color: transparent;
+}
+
+html body img {
+  border-style: none;
+}
+
+/* temporary to visualize box borders */
+* {
+  border: 1px solid transparent;
+}
+
+/* temporary end */
+html {
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-  font-size: 1.5rem;
-  background: linear-gradient(45deg, grey, grey 50%, black);
-  width: 80%;
-  margin: 0 auto;
+  margin: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 10, 10, 0.95)), color-stop(10%, rgba(50, 50, 50, 0.95)), to(rgba(255, 0, 0, 0.8))), url("../assets/h2_wildstraw.png") center center;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(255, 0, 0, 0.8)), url("../assets/h2_wildstraw.png") center center;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  font-size: 1rem;
+  color: lightgrey;
+  width: 100%;
+  gap: 0.5rem;
+  /* grid-template-columns: [main-start] 1f[content-start] 10fr [content-end] 1fr [main-end];
+    grid-template-rows: [main-start] 1fr [content-start] auto [content-end] 1fr [main-end]; */
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  -ms-grid-rows: (minmax(100px, 1fr))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-areas: "head head" "main details" "services services"  "foot  foot";
 }
 
 header {
-  background-color: lightgrey;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: head;
   width: inherit;
   position: fixed;
   top: 0;
-  min-height: 10%;
+  min-height: 10vh;
+  /*img {
+        max-width: 10%;
+        max-width: 10%;
+    }*/
 }
 
-header img {
-  max-width: 10%;
-  max-width: 10%;
+header nav {
+  background-color: #323232;
+  opacity: 0.9;
 }
 
-header ul {
+header nav ul {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header li {
+header nav li {
   margin-right: 1em;
 }
 
-header a {
+header nav a {
   text-decoration: none;
+  color: #c80000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
-header .left-item {
-  margin-left: -2.2em;
-}
-
-header .right-item {
+header nav .right-item {
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 2em;
+}
+
+main {
+  /* display: grid;
+    width: inherit; */
+  margin-top: 10vh;
+}
+
+main h1, main h2 {
+  font-family: "Tourney", cursive;
+}
+
+main .main-section {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+}
+
+main .details-section {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: details;
+}
+
+main .services-section {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: services;
+}
+
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: foot;
 }
 
 footer img {
-  display: inline;
-  max-height: 10%;
-  max-width: 20%;
+  max-height: auto;
+  width: 20%;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,66 +1,122 @@
-$gradient: linear-gradient(45deg, grey, grey 50%, black);
-$color1 : lightgrey;
+@import 'variables';
+@import 'resets';
 
+/* temporary to visualize box borders */
 * {
-    border: 1px solid blue;
+    border: 1px solid transparent;
 }
+/* temporary end */
 
 html {
-    box-sizing: border-box; //content-box
-    font-size: 12px;
-    font-family:'Courier New', Courier, monospace;
-    //background-image: url("./assets/h2_wildstraw.png");
+    font-family: $special-fonts;
 }
 
 body {
-    font-size: 1.5rem;
-    background: $gradient;
-    width: 80%; // this (<100%) plus margin 0 (top, bottom) auto (left, right) to center content in body horizonatally 
-    margin: 0 auto;
+    margin: auto;
+    background: $background-gradient, url("../assets/h2_wildstraw.png") center center;
+}
+
+.container {
+    display: grid;
+    font-size: 1rem;
+    color: $text-primary;
+    width: 100%; // this (<100%) plus margin 0 (top, bottom) auto (left, right) to center content in body horizonatally 
+    //margin: 0 auto;
+    //overflow: hidden; //to hide any scroll bars
+    gap: 0.5rem;
+    /* grid-template-columns: [main-start] 1f[content-start] 10fr [content-end] 1fr [main-end];
+    grid-template-rows: [main-start] 1fr [content-start] auto [content-end] 1fr [main-end]; */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) ;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-areas:    "head head"
+                            "main details"
+                            "services services" 
+                            "foot  foot";
+    
 }
 
 header {
-    background-color: $color1;
+    //grid-column: main;
+    grid-area: head;
     //display: inline-block; //inline-box behave like inline elements, but with block-style padding and margin, width etc
     // nav is display: block by default
     width: inherit; //to inherit width value body parent
     position: fixed; //locks it in-place, ie always at top of visible area, regardless of scroll position
     top: 0;
-    min-height: 10%;
-    img {
+    min-height: $nav-height; 
+    /*img {
         max-width: 10%;
         max-width: 10%;
+    }*/
+    nav {
+        background-color: $background-color;
+        opacity: 0.9;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        li {
+            //float: left;
+            //margin-left: 1em;
+            margin-right: 1em; //top/ bottom 0, left/ right 10px?
+        }
+
+        a {
+            //display: block;
+            text-decoration: none;
+            color: $accent-color;
+            font-family: $special-fonts;
+            font-size: 1.5em;
+            font-weight: bold;
+            //margin: 0 1em 1em 1em;
+        }
+
+        .right-item {
+            margin-left: auto;
+            margin-right: 2em;
+        } 
+
+    }    
+}
+
+main {
+    /* display: grid;
+    width: inherit; */
+    margin-top: $nav-height;
+    
+    h1,h2 {
+        font-family: $future-fonts;
     }
 
-    ul {
-        list-style-type: none;
-        display: flex;
+    .main-section {
+        grid-area: main;
     }
 
-    li {
-        //float: left;
-        margin-right: 1em; //top/ bottom 0, left/ right 10px?
+    .details-section {
+        grid-area: details;
     }
 
-    a {
-        //display: block;
-        text-decoration: none;
-        //margin: 0 1em 1em 1em;
-    }
-   
-    .left-item {
-        margin-left: -2.2em;
-    }
-
-    .right-item {
-        margin-left: auto;
-        margin-right: 0;
+    .services-section {
+        grid-area: services;
     }
 }
 
-footer img {
+footer {
+    grid-area: foot;
+     img {
     // use a value of “auto” for the height property and adjust the width value, BEST to explicitly state BOTH properties//
-    display: inline;
-    max-height: 10%;
-    max-width: 20%;
+        //display: inline;
+        max-height: auto;
+        width: 20%; 
+     }
 }
+
+
+@media screen and (max-width: 800px) {
+    body {
+      width: 100%;
+    }
+
+  }
