@@ -1,0 +1,6 @@
+/* 
+        @for $i from 1 through 5 {
+            li:nth-child(#{$i}) {
+                transition-delay: 100ms;
+            }
+        } */

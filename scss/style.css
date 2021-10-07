@@ -31,14 +31,27 @@ html body img {
 }
 
 /* temporary end */
-html {
-  font-family: "Roboto", sans-serif;
+h1, h2, h3 {
+  font-family: "Tourney", cursive;
+}
+
+a, .bold {
+  font-weight: bold;
+}
+
+table thead {
+  background: #323232;
+}
+
+table tbody {
+  background: #646464;
 }
 
 body {
   margin: auto;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 10, 10, 0.95)), color-stop(10%, rgba(50, 50, 50, 0.95)), to(rgba(255, 0, 0, 0.8))), url("../assets/h2_wildstraw.png") center center;
   background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(255, 0, 0, 0.8)), url("../assets/h2_wildstraw.png") center center;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -46,15 +59,11 @@ body {
   display: grid;
   font-size: 1rem;
   color: lightgrey;
-  width: 100%;
-  gap: 0.5rem;
-  /* grid-template-columns: [main-start] 1f[content-start] 10fr [content-end] 1fr [main-end];
-    grid-template-rows: [main-start] 1fr [content-start] auto [content-end] 1fr [main-end]; */
-  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  -ms-grid-rows: (minmax(100px, 1fr))[auto-fit];
-      grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-      grid-template-areas: "head head" "main details" "services services"  "foot  foot";
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+      grid-template-areas: "head head" "main main" "team team" "video video" "details1 details2" "services services"  "foot foot";
 }
 
 header {
@@ -66,10 +75,6 @@ header {
   position: fixed;
   top: 0;
   min-height: 10vh;
-  /*img {
-        max-width: 10%;
-        max-width: 10%;
-    }*/
 }
 
 header nav {
@@ -93,7 +98,6 @@ header nav a {
   color: #c80000;
   font-family: "Roboto", sans-serif;
   font-size: 1.5em;
-  font-weight: bold;
 }
 
 header nav .right-item {
@@ -101,45 +105,57 @@ header nav .right-item {
   margin-right: 2em;
 }
 
-main {
-  /* display: grid;
-    width: inherit; */
+.main-section {
   margin-top: 10vh;
-}
-
-main h1, main h2 {
-  font-family: "Tourney", cursive;
-}
-
-main .main-section {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: main;
 }
 
-main .details-section {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: details;
+.details-part1 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: details1;
 }
 
-main .services-section {
-  -ms-grid-row: 3;
+.details-part2 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: details2;
+}
+
+.video {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: video;
+}
+
+.services {
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: services;
 }
 
+.team-section {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: team;
+}
+
+.team-section img {
+  max-height: auto;
+  width: 20%;
+}
+
 footer {
-  -ms-grid-row: 4;
+  -ms-grid-row: 7;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: foot;
-}
-
-footer img {
-  max-height: auto;
-  width: 20%;
 }
 
 @media screen and (max-width: 800px) {

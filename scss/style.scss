@@ -6,48 +6,58 @@
     border: 1px solid transparent;
 }
 /* temporary end */
+h1,h2, h3 {
+    font-family: $future-fonts;
+}
 
-html {
-    font-family: $special-fonts;
+a, .bold {
+    font-weight: bold;
+}
+
+table {
+    thead {
+        background: $background-color;
+    }
+    tbody {
+        background: $background-color2;
+    }
 }
 
 body {
     margin: auto;
     background: $background-gradient, url("../assets/h2_wildstraw.png") center center;
+    font-family: $special-fonts;
 }
 
 .container {
     display: grid;
     font-size: 1rem;
     color: $text-primary;
-    width: 100%; // this (<100%) plus margin 0 (top, bottom) auto (left, right) to center content in body horizonatally 
-    //margin: 0 auto;
-    //overflow: hidden; //to hide any scroll bars
-    gap: 0.5rem;
-    /* grid-template-columns: [main-start] 1f[content-start] 10fr [content-end] 1fr [main-end];
-    grid-template-rows: [main-start] 1fr [content-start] auto [content-end] 1fr [main-end]; */
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) ;
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    //width: 100%; // this (<100%) plus margin 0 (top, bottom) auto (left, right) to center content in body horizonatally 
+
+    //gap: 0.5rem;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-areas:    "head head"
-                            "main details"
+                            "main main"
+                            "team team"
+                            "video video"
+                            "details1 details2"
                             "services services" 
-                            "foot  foot";
+                            "foot foot";
     
 }
 
 header {
-    //grid-column: main;
+   
     grid-area: head;
-    //display: inline-block; //inline-box behave like inline elements, but with block-style padding and margin, width etc
-    // nav is display: block by default
+   
     width: inherit; //to inherit width value body parent
     position: fixed; //locks it in-place, ie always at top of visible area, regardless of scroll position
     top: 0;
     min-height: $nav-height; 
-    /*img {
-        max-width: 10%;
-        max-width: 10%;
-    }*/
+
     nav {
         background-color: $background-color;
         opacity: 0.9;
@@ -69,7 +79,6 @@ header {
             color: $accent-color;
             font-family: $special-fonts;
             font-size: 1.5em;
-            font-weight: bold;
             //margin: 0 1em 1em 1em;
         }
 
@@ -81,36 +90,39 @@ header {
     }    
 }
 
-main {
-    /* display: grid;
-    width: inherit; */
-    margin-top: $nav-height;
-    
-    h1,h2 {
-        font-family: $future-fonts;
-    }
+
 
     .main-section {
+        margin-top: $nav-height;
         grid-area: main;
     }
 
-    .details-section {
-        grid-area: details;
+    .details-part1  {
+        grid-area: details1;
     }
 
-    .services-section {
+    .details-part2 {
+        grid-area: details2;
+    }
+
+    .video {
+        grid-area: video;
+    }
+
+    .services {
         grid-area: services;
     }
-}
+
+    .team-section {
+        grid-area: team;
+        img {
+            max-height: auto;
+            width: 20%; 
+         }
+    }
 
 footer {
     grid-area: foot;
-     img {
-    // use a value of “auto” for the height property and adjust the width value, BEST to explicitly state BOTH properties//
-        //display: inline;
-        max-height: auto;
-        width: 20%; 
-     }
 }
 
 
