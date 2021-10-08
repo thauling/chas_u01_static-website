@@ -44,7 +44,7 @@ table thead {
 }
 
 table tbody {
-  background: #646464;
+  background: #640a0a;
 }
 
 body {
@@ -161,6 +161,9 @@ footer {
 @media screen and (max-width: 800px) {
   body {
     width: 100%;
+  }
+  .container {
+        grid-template-areas: "head head" "main main" "team team" "video video" "details1 details1" "details2 details2" "services services"  "foot foot";
   }
 }
 /*# sourceMappingURL=style.css.map */

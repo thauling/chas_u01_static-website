@@ -90,8 +90,6 @@ header {
     }    
 }
 
-
-
     .main-section {
         margin-top: $nav-height;
         grid-area: main;
@@ -125,10 +123,20 @@ footer {
     grid-area: foot;
 }
 
-
 @media screen and (max-width: 800px) {
     body {
       width: 100%;
+    }
+
+    .container {
+        grid-template-areas: "head head"
+                             "main main"
+                             "team team"
+                             "video video"
+                             "details1 details1"
+                             "details2 details2"
+                             "services services" 
+                             "foot foot";
     }
 
   }
