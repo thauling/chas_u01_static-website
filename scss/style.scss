@@ -1,12 +1,8 @@
 @import 'variables';
 @import 'resets';
 
-/* temporary to visualize box borders */
-* {
-    border: 1px solid transparent;
-}
-/* temporary end */
-h1,h2, h3 {
+/* global */
+h1, h2, h3 {
     font-family: $future-fonts;
 }
 
@@ -14,62 +10,65 @@ a, .bold {
     font-weight: bold;
 }
 
-table {
-    thead {
-        background: $background-color;
-    }
-    tbody {
-        background: $background-color2;
-    }
-}
 
 body {
-    margin: auto;
+   // margin: auto;
     background: $background-gradient, url("../assets/h2_wildstraw.png") center center;
     font-family: $special-fonts;
+    //text-align: center;
 }
 
 .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
     display: grid;
-    font-size: 1rem;
+    font-size: $normal-font;
     color: $text-primary;
     //width: 100%; // this (<100%) plus margin 0 (top, bottom) auto (left, right) to center content in body horizonatally 
 
-    //gap: 0.5rem;
+    gap: 10px 0;
 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     grid-template-areas:    "head head"
                             "main main"
-                            "team team"
-                            "video video"
                             "details1 details2"
-                            "services services" 
+                            "team team"
+                            "services services"
+                            "video video"
                             "foot foot";
     
-}
+    //justify-items: center;
+
 
 header {
-   
     grid-area: head;
-   
-    width: inherit; //to inherit width value body parent
+    justify-self: center;
+    
+    //width: inherit; //to inherit width value body parent
     position: fixed; //locks it in-place, ie always at top of visible area, regardless of scroll position
     top: 0;
     min-height: $nav-height; 
+    background-color: $background-color;
 
+    h1 {
+        float: left;
+    }
     nav {
-        background-color: $background-color;
+        float: right;
+        //background-color: $background-color;
         opacity: 0.9;
+        margin: 25px 0 0 100px;
 
         ul {
+            margin: 0;    /* reduce area around text to minimum */
+            padding: 0;   /* to minimum */
             list-style-type: none;
             display: flex;
         }
 
         li {
-            //float: left;
-            //margin-left: 1em;
             margin-right: 1em; //top/ bottom 0, left/ right 10px?
         }
 
@@ -78,14 +77,14 @@ header {
             text-decoration: none;
             color: $accent-color;
             font-family: $special-fonts;
-            font-size: 1.5em;
+            font-size: $large-font;
             //margin: 0 1em 1em 1em;
         }
 
         .right-item {
             margin-left: auto;
-            margin-right: 2em;
-        } 
+            margin-right: 0;
+        }  
 
     }    
 }
@@ -93,50 +92,130 @@ header {
     .main-section {
         margin-top: $nav-height;
         grid-area: main;
+        justify-self: stretch;
     }
 
     .details-part1  {
         grid-area: details1;
+        justify-self: start;
+        background: $background-color2;
     }
 
     .details-part2 {
         grid-area: details2;
+        justify-self: end;
+        background: $background-color2;
     }
 
     .video {
         grid-area: video;
+        justify-self: start;
+        display: flex;
+        justify-content: start;
+        background: $background-color2;
+        scroll-margin-top: 75px;
     }
 
     .services {
         grid-area: services;
+        background-color: $background-color2;
+        //scroll-margin-bottom: 17px;
+        display: flex;
+        div {
+            margin: 0 auto;
+        
+        table {
+            thead {
+                background: $background-color;
+            }
+            tbody {
+                background: $background-color3;
+            }
+        }
+    }
     }
 
     .team-section {
         grid-area: team;
+        background-color: $background-color2;
+        //justify-self: center;
+        
+        /* figure {
+            background-color: green;
+            //margin-right: -60%;
+        } */
+        figure {
+            max-width: 75%;
+            margin: 0 auto;
         img {
             max-height: auto;
-            width: 20%; 
+            max-width: 100%; 
          }
+        }
+         //display: flex;
+         //flex-direction: column;
+         scroll-margin-top: 75px;
     }
+
+   
 
 footer {
     grid-area: foot;
+    justify-self: center;
+    background-color: $background-color;
+    opacity: 0.9;
+    position: fixed; //locks it in-place, ie always at top of visible area, regardless of scroll position
+    bottom: 0;
 }
 
-@media screen and (max-width: 800px) {
+}
+
+
+@media screen and (max-width: 414px) {
     body {
       width: 100%;
-    }
+      font-size: normal;
+    } 
 
     .container {
-        grid-template-areas: "head head"
-                             "main main"
-                             "team team"
-                             "video video"
-                             "details1 details1"
-                             "details2 details2"
-                             "services services" 
-                             "foot foot";
+
+        flex-flow: column wrap;
+        /* grid-template-columns: fit-content(100%);
+        grid-template-areas: "head"
+                             "main"
+                             "details1"
+                             "details2"
+                             "team"
+                             "services"
+                             "video"
+                             "foot";  */
+ 
+        /* display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 5vw 0;    */                  
+
+        head {
+            min-height: $nav-height-mob;   
+        }
+
+        nav {
+            width: 100%;
+            margin: auto;
+        } 
+
+        ul {
+            margin: auto;
+            //width: 100%;
+        }
+
+        a {
+            font-size: $small-font;
+        }
+
+        .video .services {
+            flex-flow: column wrap;
+        }
     }
 
   }

@@ -25,12 +25,7 @@ html body img {
   border-style: none;
 }
 
-/* temporary to visualize box borders */
-* {
-  border: 1px solid transparent;
-}
-
-/* temporary end */
+/* global */
 h1, h2, h3 {
   font-family: "Tourney", cursive;
 }
@@ -39,131 +34,223 @@ a, .bold {
   font-weight: bold;
 }
 
-table thead {
-  background: #323232;
-}
-
-table tbody {
-  background: #640a0a;
-}
-
 body {
-  margin: auto;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 10, 10, 0.95)), color-stop(10%, rgba(50, 50, 50, 0.95)), to(rgba(255, 0, 0, 0.8))), url("../assets/h2_wildstraw.png") center center;
   background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(255, 0, 0, 0.8)), url("../assets/h2_wildstraw.png") center center;
   font-family: "Roboto", sans-serif;
 }
 
 .container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
   display: -ms-grid;
   display: grid;
   font-size: 1rem;
   color: lightgrey;
+  gap: 10px 0;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr auto;
       grid-template-rows: 1fr auto;
-      grid-template-areas: "head head" "main main" "team team" "video video" "details1 details2" "services services"  "foot foot";
+      grid-template-areas: "head head" "main main" "details1 details2" "team team" "services services" "video video" "foot foot";
 }
 
-header {
+.container header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: head;
-  width: inherit;
+  -ms-grid-column-align: center;
+      justify-self: center;
   position: fixed;
   top: 0;
   min-height: 10vh;
+  background-color: rgba(40, 40, 40, 0.95);
 }
 
-header nav {
-  background-color: #323232;
+.container header h1 {
+  float: left;
+}
+
+.container header nav {
+  float: right;
   opacity: 0.9;
+  margin: 25px 0 0 100px;
 }
 
-header nav ul {
+.container header nav ul {
+  margin: 0;
+  /* reduce area around text to minimum */
+  padding: 0;
+  /* to minimum */
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header nav li {
+.container header nav li {
   margin-right: 1em;
 }
 
-header nav a {
+.container header nav a {
   text-decoration: none;
-  color: #c80000;
+  color: #f30909;
   font-family: "Roboto", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
-header nav .right-item {
+.container header nav .right-item {
   margin-left: auto;
-  margin-right: 2em;
+  margin-right: 0;
 }
 
-.main-section {
+.container .main-section {
   margin-top: 10vh;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: main;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
 }
 
-.details-part1 {
-  -ms-grid-row: 5;
+.container .details-part1 {
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: details1;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  background: rgba(10, 10, 10, 0.3);
 }
 
-.details-part2 {
-  -ms-grid-row: 5;
+.container .details-part2 {
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: details2;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  background: rgba(10, 10, 10, 0.3);
 }
 
-.video {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: video;
-}
-
-.services {
+.container .video {
   -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: services;
+  grid-area: video;
+  justify-self: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background: rgba(10, 10, 10, 0.3);
+  scroll-margin-top: 75px;
 }
 
-.team-section {
-  -ms-grid-row: 3;
+.container .services {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: services;
+  background-color: rgba(10, 10, 10, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .services div {
+  margin: 0 auto;
+}
+
+.container .services div table thead {
+  background: rgba(40, 40, 40, 0.95);
+}
+
+.container .services div table tbody {
+  background: rgba(80, 80, 80, 0.95);
+}
+
+.container .team-section {
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: team;
+  background-color: rgba(10, 10, 10, 0.3);
+  /* figure {
+            background-color: green;
+            //margin-right: -60%;
+        } */
+  scroll-margin-top: 75px;
 }
 
-.team-section img {
+.container .team-section figure {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.container .team-section figure img {
   max-height: auto;
-  width: 20%;
+  max-width: 100%;
 }
 
-footer {
+.container footer {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: foot;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: rgba(40, 40, 40, 0.95);
+  opacity: 0.9;
+  position: fixed;
+  bottom: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 414px) {
   body {
     width: 100%;
+    font-size: normal;
   }
   .container {
-        grid-template-areas: "head head" "main main" "team team" "video video" "details1 details1" "details2 details2" "services services"  "foot foot";
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    /* grid-template-columns: fit-content(100%);
+        grid-template-areas: "head"
+                             "main"
+                             "details1"
+                             "details2"
+                             "team"
+                             "services"
+                             "video"
+                             "foot";  */
+    /* display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 5vw 0;    */
+  }
+  .container head {
+    min-height: 5vh;
+  }
+  .container nav {
+    width: 100%;
+    margin: auto;
+  }
+  .container ul {
+    margin: auto;
+  }
+  .container a {
+    font-size: 0.25rem;
+  }
+  .container .video .services {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
   }
 }
 /*# sourceMappingURL=style.css.map */

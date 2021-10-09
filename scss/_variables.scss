@@ -1,9 +1,14 @@
 $background-gradient: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(255,0,0,0.8)) ;//linear-gradient(45deg, grey, grey 50%, black);
-$background-color : rgba(50,50,50,1);
-$background-color2 : rgba(100,10,10,1);
+$background-color : rgba(40,40,40,0.95);
+$background-color2 : rgba(10,10,10,0.3);
+$background-color3 : rgba(80, 80, 80,0.95);
 $text-primary: lightgrey;
 $text-secondary: rgb(211, 211, 211);
-$accent-color: rgba(200,0,0,1);
+$accent-color: rgb(243, 9, 9);
 $special-fonts: 'Roboto', sans-serif;   //font-family: 'Roboto', sans-serif;
 $future-fonts: 'Tourney', cursive;      //font-family: 'Tourney', cursive;
 $nav-height: 10vh;
+$nav-height-mob: 5vh;
+$large-font: 1.5rem;
+$normal-font: 1rem;
+$small-font: 0.25rem;
