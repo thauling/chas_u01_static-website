@@ -1,0 +1,34 @@
+@mixin mob-set {
+    body {
+        text-align: center;
+      }
+    
+      .content-container {
+        width: $mob-width;
+      }
+
+      header {
+        min-height: $nav-height-mob;
+        width: $mob-width;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        font-size: small;
+    
+        h1,
+        nav {
+          margin: 0;
+          padding: 0;
+          text-align: left;
+        }
+
+
+    }
+     
+    .home-article {
+        margin-top: $home-top-margin;
+    }
+    
+}
