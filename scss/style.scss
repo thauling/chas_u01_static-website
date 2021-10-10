@@ -57,7 +57,7 @@ figure {
   overflow: hidden;
   font-size: $normal-font;
   background: $background-color2; */
-  @include mob-set;
+  @include content-set;
 }
 
 .content-container2 {
@@ -67,7 +67,7 @@ figure {
   overflow: hidden;
   font-size: $normal-font;
   background: $background-color2; */
-  @include mob-set;
+  @include content-set;
   display: flex;
   border-bottom: 3px solid $accent-color2;
 }

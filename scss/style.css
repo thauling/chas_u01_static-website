@@ -80,55 +80,12 @@ figure img {
   overflow: hidden;
   font-size: $normal-font;
   background: $background-color2; */
-}
-
-.content-container body {
-  text-align: center;
-}
-
-.content-container .content-container {
-  width: 98%;
-}
-
-.content-container .content-container2 {
-  width: 98%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.content-container header {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  font-size: small;
-}
-
-.content-container header h1,
-.content-container header nav {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.content-container th,
-.content-container td {
-  font-size: small;
-}
-
-.content-container .home-article {
-  margin-top: 100px;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  font-size: 1rem;
+  background: rgba(10, 10, 10, 0.3);
 }
 
 .content-container2 {
@@ -138,59 +95,16 @@ figure img {
   overflow: hidden;
   font-size: $normal-font;
   background: $background-color2; */
+  width: 90%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  font-size: 1rem;
+  background: rgba(10, 10, 10, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-bottom: 3px solid #960909;
-}
-
-.content-container2 body {
-  text-align: center;
-}
-
-.content-container2 .content-container {
-  width: 98%;
-}
-
-.content-container2 .content-container2 {
-  width: 98%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.content-container2 header {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  font-size: small;
-}
-
-.content-container2 header h1,
-.content-container2 header nav {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.content-container2 th,
-.content-container2 td {
-  font-size: small;
-}
-
-.content-container2 .home-article {
-  margin-top: 100px;
 }
 
 .sub-container {
