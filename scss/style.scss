@@ -1,12 +1,14 @@
 @import "variables";
 @import "resets";
 @import "mob-set";
+@import "content-set";
+
 
 /* global */
 body {
   background: $background-gradient,
     url("../assets/h2_wildstraw.png") center center;
-    color: $text-primary;
+  color: $text-primary;
 }
 
 h1,
@@ -22,6 +24,8 @@ a,
 }
 
 table {
+  max-width: 75%;
+  margin: 0 auto;
   thead {
     background: $background-color;
   }
@@ -33,6 +37,7 @@ table {
 figure {
   max-width: 75%;
   margin: 0 auto;
+
   img {
     max-height: auto;
     min-width: 300px;
@@ -40,21 +45,42 @@ figure {
   }
 }
 
+.backtotop {
+  color: $text-primary;
+  font-weight: bold;
+}
 
 .content-container {
-  width: $std-width;
+  /* width: $std-width;
+  height: auto;
   margin: auto;
   overflow: hidden;
   font-size: $normal-font;
-  background: $background-color2;
-  scroll-margin-top: 75px;
+  background: $background-color2; */
+  @include mob-set;
+}
+
+.content-container2 {
+  /* width: $std-width;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  font-size: $normal-font;
+  background: $background-color2; */
+  @include mob-set;
+  display: flex;
+  border-bottom: 3px solid $accent-color2;
+}
+
+.sub-container {
+  padding: 5px;
 }
 
 header {
-    width: 100%;
+  width: 100%;
   position: absolute; //locks it in-place, ie always at top of visible area, regardless of scroll position
   top: 0;
-  min-height: $nav-height;
+  //min-height: $nav-height;
   background-color: $background-color;
 
   h1 {
@@ -64,7 +90,7 @@ header {
   nav {
     float: right;
     opacity: 0.9;
-    margin-top: 25px;
+    margin-top: $nav-top-margin;
 
     ul {
       margin: 0; /* reduce area around text to minimum */
@@ -93,11 +119,11 @@ header {
 }
 
 .home-article {
-    margin-top: $home-top-margin;
+  margin-top: $home-top-margin;
 }
 
 footer {
-  width: inherit;  
+  width: inherit;
   background-color: $background-color;
   opacity: 0.9;
   //position: fixed; //locks it in-place, ie always at top of visible area, regardless of scroll position
@@ -107,17 +133,19 @@ footer {
   text-align: center;
 }
 
+a:hover {
+    color: $highlight-color;
+  }
+
 @media screen and (max-width: 750px) {
-    @include mob-set;
+  @include mob-set;
 }
 
-
 @media screen and (max-width: 450px) {
-    @include mob-set;
+  @include mob-set;
 
-    iframe {
-        width: 100%;
-        height: auto;
-    }
+  iframe {
+    width: 100%;
+    height: auto;
   }
- 
+}

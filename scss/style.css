@@ -27,8 +27,8 @@ html body img {
 
 /* global */
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 10, 10, 0.95)), color-stop(10%, rgba(50, 50, 50, 0.95)), to(rgba(255, 0, 0, 0.8))), url("../assets/h2_wildstraw.png") center center;
-  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(255, 0, 0, 0.8)), url("../assets/h2_wildstraw.png") center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 10, 10, 0.95)), color-stop(10%, rgba(50, 50, 50, 0.95)), to(rgba(100, 0, 0, 0.8))), url("../assets/h2_wildstraw.png") center center;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(100, 0, 0, 0.8)), url("../assets/h2_wildstraw.png") center center;
   color: lightgrey;
 }
 
@@ -42,6 +42,11 @@ a,
 .bold {
   font-weight: bold;
   background: rgba(40, 40, 40, 0.95);
+}
+
+table {
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 table thead {
@@ -63,20 +68,139 @@ figure img {
   max-width: 100%;
 }
 
+.backtotop {
+  color: lightgrey;
+  font-weight: bold;
+}
+
 .content-container {
-  width: 90%;
+  /* width: $std-width;
+  height: auto;
   margin: auto;
   overflow: hidden;
-  font-size: 1rem;
-  background: rgba(10, 10, 10, 0.3);
-  scroll-margin-top: 75px;
+  font-size: $normal-font;
+  background: $background-color2; */
+}
+
+.content-container body {
+  text-align: center;
+}
+
+.content-container .content-container {
+  width: 98%;
+}
+
+.content-container .content-container2 {
+  width: 98%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-container header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-size: small;
+}
+
+.content-container header h1,
+.content-container header nav {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.content-container th,
+.content-container td {
+  font-size: small;
+}
+
+.content-container .home-article {
+  margin-top: 100px;
+}
+
+.content-container2 {
+  /* width: $std-width;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  font-size: $normal-font;
+  background: $background-color2; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 3px solid #960909;
+}
+
+.content-container2 body {
+  text-align: center;
+}
+
+.content-container2 .content-container {
+  width: 98%;
+}
+
+.content-container2 .content-container2 {
+  width: 98%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-container2 header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-size: small;
+}
+
+.content-container2 header h1,
+.content-container2 header nav {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.content-container2 th,
+.content-container2 td {
+  font-size: small;
+}
+
+.content-container2 .home-article {
+  margin-top: 100px;
+}
+
+.sub-container {
+  padding: 5px;
 }
 
 header {
   width: 100%;
   position: absolute;
   top: 0;
-  min-height: 10%;
   background-color: rgba(40, 40, 40, 0.95);
 }
 
@@ -88,7 +212,7 @@ header h1 {
 header nav {
   float: right;
   opacity: 0.9;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 header nav ul {
@@ -129,15 +253,25 @@ footer {
   text-align: center;
 }
 
+a:hover {
+  color: cyan;
+}
+
 @media screen and (max-width: 750px) {
   body {
     text-align: center;
   }
   .content-container {
-    width: 100%;
+    width: 98%;
+  }
+  .content-container2 {
+    width: 98%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   header {
-    min-height: 5%;
     width: 100%;
     margin: 0 auto;
     padding: 0;
@@ -158,6 +292,10 @@ footer {
     margin: 0;
     padding: 0;
     text-align: left;
+  }
+  th,
+  td {
+    font-size: small;
   }
   .home-article {
     margin-top: 100px;
@@ -169,10 +307,16 @@ footer {
     text-align: center;
   }
   .content-container {
-    width: 100%;
+    width: 98%;
+  }
+  .content-container2 {
+    width: 98%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   header {
-    min-height: 5%;
     width: 100%;
     margin: 0 auto;
     padding: 0;
@@ -193,6 +337,10 @@ footer {
     margin: 0;
     padding: 0;
     text-align: left;
+  }
+  th,
+  td {
+    font-size: small;
   }
   .home-article {
     margin-top: 100px;

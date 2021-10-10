@@ -1,0 +1,8 @@
+@mixin content-set {
+  width: $std-width;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  font-size: $normal-font;
+  background: $background-color2;
+}
