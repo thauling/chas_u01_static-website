@@ -120,13 +120,13 @@ header {
 }
 
 header h1 {
-  float: none;
+  float: left;
   padding-left: 20px;
   color: #f30909;
 }
 
 header nav {
-  float: none;
+  float: right;
   opacity: 0.9;
   margin-top: 30px;
 }
@@ -212,6 +212,7 @@ a:focus {
   }
   header h1,
   header nav {
+    float: none;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -257,6 +258,7 @@ a:focus {
   }
   header h1,
   header nav {
+    float: none;
     margin: 0;
     padding: 0;
     text-align: left;
