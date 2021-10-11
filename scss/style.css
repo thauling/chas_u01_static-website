@@ -63,7 +63,6 @@ figure {
 }
 
 figure img {
-  max-height: auto;
   min-width: 300px;
   max-width: 100%;
 }
