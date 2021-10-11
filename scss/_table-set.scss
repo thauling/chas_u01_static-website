@@ -1,0 +1,18 @@
+@mixin table-set {
+  max-width: 75%;
+  margin: 0 auto;
+  thead {
+    background: $background-color;
+  }
+  tbody {
+    background: $background-color3;
+    .darker {
+      background: $background-color;
+    }
+    a {
+      font-weight: bold;
+      color: $text-primary;
+      text-decoration: none;
+    }
+  }
+}

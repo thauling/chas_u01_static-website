@@ -3,21 +3,18 @@ $background-gradient: linear-gradient(
   rgba(10, 10, 10, 0.95),
   rgba(50, 50, 50, 0.95) 10%,
   rgba(100, 0, 0, 0.8)
-); //linear-gradient(45deg, grey, grey 50%, black);
+);
 $background-color: rgba(40, 40, 40, 0.95);
 $background-color2: rgba(10, 10, 10, 0.3);
 $background-color3: rgba(80, 80, 80, 0.95);
 $text-primary: lightgrey;
-$text-secondary: rgb(211, 211, 211);
 $accent-color: rgb(243, 9, 9);
 $accent-color2: rgb(150, 9, 9);
 $highlight-color: rgb(0, 255, 255);
-$special-fonts: "Roboto", sans-serif; //font-family: 'Roboto', sans-serif;
-$future-fonts: "Tourney", cursive; //font-family: 'Tourney', cursive;
+$special-fonts: "Roboto", sans-serif; 
+$future-fonts: "Tourney", cursive; 
 $std-width: 90%;
 $mob-width: 98%;
-//$nav-height: 0%;
-//$nav-height-mob: 0%;
 $nav-top-margin: 30px;
 $home-top-margin: 100px;
 $large-font: 1.5rem;

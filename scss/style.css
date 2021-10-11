@@ -27,8 +27,8 @@ html body img {
 
 /* global */
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 10, 10, 0.95)), color-stop(10%, rgba(50, 50, 50, 0.95)), to(rgba(100, 0, 0, 0.8))), url("../assets/h2_wildstraw.png") center center;
-  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(100, 0, 0, 0.8)), url("../assets/h2_wildstraw.png") center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 10, 10, 0.95)), color-stop(10%, rgba(50, 50, 50, 0.95)), to(rgba(100, 0, 0, 0.8))), url("../assets/smultron_pixmedium.png") center center;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(50, 50, 50, 0.95) 10%, rgba(100, 0, 0, 0.8)), url("../assets/smultron_pixmedium.png") center center;
   color: lightgrey;
 }
 
@@ -36,12 +36,6 @@ h1,
 h2,
 h3 {
   font-family: "Tourney", cursive;
-}
-
-a,
-.bold {
-  font-weight: bold;
-  background: rgba(40, 40, 40, 0.95);
 }
 
 table {
@@ -55,6 +49,16 @@ table thead {
 
 table tbody {
   background: rgba(80, 80, 80, 0.95);
+}
+
+table tbody .darker {
+  background: rgba(40, 40, 40, 0.95);
+}
+
+table tbody a {
+  font-weight: bold;
+  color: lightgrey;
+  text-decoration: none;
 }
 
 figure {
@@ -73,12 +77,6 @@ figure img {
 }
 
 .content-container {
-  /* width: $std-width;
-  height: auto;
-  margin: auto;
-  overflow: hidden;
-  font-size: $normal-font;
-  background: $background-color2; */
   width: 90%;
   height: auto;
   margin: auto;
@@ -88,12 +86,6 @@ figure img {
 }
 
 .content-container2 {
-  /* width: $std-width;
-  height: auto;
-  margin: auto;
-  overflow: hidden;
-  font-size: $normal-font;
-  background: $background-color2; */
   width: 90%;
   height: auto;
   margin: auto;
@@ -120,6 +112,7 @@ header {
 header h1 {
   float: left;
   padding-left: 20px;
+  color: #f30909;
 }
 
 header nav {
@@ -142,6 +135,7 @@ header nav li {
 }
 
 header nav a {
+  font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
   color: #f30909;
@@ -166,8 +160,10 @@ footer {
   text-align: center;
 }
 
-a:hover {
-  color: cyan;
+@media (hover: hover) {
+  a:hover {
+    color: cyan;
+  }
 }
 
 @media screen and (max-width: 750px) {

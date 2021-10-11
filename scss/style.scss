@@ -2,12 +2,13 @@
 @import "resets";
 @import "mob-set";
 @import "content-set";
-
+@import "table-set";
+@import "figure-set";
 
 /* global */
 body {
   background: $background-gradient,
-    url("../assets/h2_wildstraw.png") center center;
+    url("../assets/smultron_pixmedium.png") center center;
   color: $text-primary;
 }
 
@@ -17,32 +18,12 @@ h3 {
   font-family: $future-fonts;
 }
 
-a,
-.bold {
-  font-weight: bold;
-  background: $background-color;
-}
-
 table {
-  max-width: 75%;
-  margin: 0 auto;
-  thead {
-    background: $background-color;
-  }
-  tbody {
-    background: $background-color3;
-  }
+  @include table-set;
 }
 
 figure {
-  max-width: 75%;
-  margin: 0 auto;
-
-  img {
-    //max-height: auto;
-    min-width: 300px;
-    max-width: 100%;
-  }
+  @include figure-set;
 }
 
 .backtotop {
@@ -51,22 +32,10 @@ figure {
 }
 
 .content-container {
-  /* width: $std-width;
-  height: auto;
-  margin: auto;
-  overflow: hidden;
-  font-size: $normal-font;
-  background: $background-color2; */
   @include content-set;
 }
 
 .content-container2 {
-  /* width: $std-width;
-  height: auto;
-  margin: auto;
-  overflow: hidden;
-  font-size: $normal-font;
-  background: $background-color2; */
   @include content-set;
   display: flex;
   border-bottom: 3px solid $accent-color2;
@@ -78,14 +47,14 @@ figure {
 
 header {
   width: 100%;
-  position: absolute; //locks it in-place, ie always at top of visible area, regardless of scroll position
+  position: absolute;
   top: 0;
-  //min-height: $nav-height;
   background-color: $background-color;
 
   h1 {
     float: left;
     padding-left: $nav-padding;
+    color: $accent-color;
   }
   nav {
     float: right;
@@ -104,7 +73,7 @@ header {
     }
 
     a {
-      //display: block;
+      font-weight: bold;
       text-decoration: none;
       text-transform: uppercase;
       color: $accent-color;
@@ -126,16 +95,16 @@ footer {
   width: inherit;
   background-color: $background-color;
   opacity: 0.9;
-  //position: fixed; //locks it in-place, ie always at top of visible area, regardless of scroll position
-  //bottom: 0;
   padding: 10px;
   font-weight: bold;
   text-align: center;
 }
 
-a:hover {
+@media (hover: hover) {
+  a:hover {
     color: $highlight-color;
   }
+}
 
 @media screen and (max-width: 750px) {
   @include mob-set;

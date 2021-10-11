@@ -13,8 +13,7 @@
   }
 
   header {
-    //min-height: $nav-height-mob;
-    width: 100%; //$mob-width;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -34,6 +33,7 @@
   td {
     font-size: small;
   }
+
   .home-article {
     margin-top: $home-top-margin;
   }
