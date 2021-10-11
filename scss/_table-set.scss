@@ -1,6 +1,10 @@
 @mixin table-set {
   max-width: 75%;
   margin: 0 auto;
+  caption {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
   thead {
     background: $background-color;
   }

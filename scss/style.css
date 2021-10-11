@@ -44,6 +44,11 @@ table {
   margin: 0 auto;
 }
 
+table caption {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 table thead {
   background: rgba(40, 40, 40, 0.95);
 }
