@@ -3,12 +3,12 @@
   background-color: $background-color;
 
   h1 {
-    float: left;
+    float: none;
     padding-left: $nav-padding;
     color: $accent-color;
   }
   nav {
-    float: right;
+    float: none;
     opacity: 0.9;
     margin-top: $nav-top-margin;
 

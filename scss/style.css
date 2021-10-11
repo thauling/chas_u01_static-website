@@ -120,13 +120,13 @@ header {
 }
 
 header h1 {
-  float: left;
+  float: none;
   padding-left: 20px;
   color: #f30909;
 }
 
 header nav {
-  float: right;
+  float: none;
   opacity: 0.9;
   margin-top: 30px;
 }
