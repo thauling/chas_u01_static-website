@@ -5,6 +5,7 @@
 @import "table-set";
 @import "figure-set";
 @import "navbar-set";
+@import "media-set";
 
 
 /* global */
@@ -44,6 +45,10 @@ figure {
   border-bottom: 3px solid $accent-color2;
 }
 
+.special {
+  border-bottom: 3px solid $accent-color2;
+}
+
 .sub-container {
   padding: 5px;
 }
@@ -68,6 +73,16 @@ footer {
   text-align: center;
 }
 
+a:focus {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.1em; 
+} 
+
+@include media-set;
+
+
+/* 
 @media (hover: hover) {
   a:hover {
     color: $highlight-color;
@@ -86,3 +101,4 @@ footer {
     height: auto;
   }
 }
+ */

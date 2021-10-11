@@ -99,6 +99,10 @@ figure img {
   border-bottom: 3px solid #960909;
 }
 
+.special {
+  border-bottom: 3px solid #960909;
+}
+
 .sub-container {
   padding: 5px;
 }
@@ -159,6 +163,12 @@ footer {
   padding: 10px;
   font-weight: bold;
   text-align: center;
+}
+
+a:focus {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.1em;
 }
 
 @media (hover: hover) {
@@ -260,4 +270,25 @@ footer {
     height: auto;
   }
 }
+
+/* 
+@media (hover: hover) {
+  a:hover {
+    color: $highlight-color;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  @include mob-set;
+}
+
+@media screen and (max-width: 450px) {
+  @include mob-set;
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+ */
 /*# sourceMappingURL=style.css.map */
