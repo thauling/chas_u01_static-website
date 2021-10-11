@@ -4,6 +4,8 @@
 @import "content-set";
 @import "table-set";
 @import "figure-set";
+@import "navbar-set";
+
 
 /* global */
 body {
@@ -18,6 +20,7 @@ h3 {
   font-family: $future-fonts;
 }
 
+/* element-specific */
 table {
   @include table-set;
 }
@@ -48,43 +51,8 @@ figure {
 header {
   width: 100%;
   position: absolute;
-  top: 0;
-  background-color: $background-color;
-
-  h1 {
-    float: left;
-    padding-left: $nav-padding;
-    color: $accent-color;
-  }
-  nav {
-    float: right;
-    opacity: 0.9;
-    margin-top: $nav-top-margin;
-
-    ul {
-      margin: 0; /* reduce area around text to minimum */
-      padding: 0; /* to minimum */
-      list-style-type: none;
-    }
-
-    li {
-      display: inline;
-      padding-right: $nav-padding;
-    }
-
-    a {
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $accent-color;
-      font-family: $special-fonts;
-      font-size: $normal-font;
-    }
-
-    .right-item {
-      margin-right: 0;
-    }
-  }
+  @include navbar-set;
+  
 }
 
 .home-article {
