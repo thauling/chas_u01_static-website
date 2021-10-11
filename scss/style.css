@@ -133,9 +133,7 @@ header nav {
 
 header nav ul {
   margin: 0;
-  /* reduce area around text to minimum */
   padding: 0;
-  /* to minimum */
   list-style-type: none;
 }
 
@@ -275,25 +273,4 @@ a:focus {
     height: auto;
   }
 }
-
-/* 
-@media (hover: hover) {
-  a:hover {
-    color: $highlight-color;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  @include mob-set;
-}
-
-@media screen and (max-width: 450px) {
-  @include mob-set;
-
-  iframe {
-    width: 100%;
-    height: auto;
-  }
-}
- */
 /*# sourceMappingURL=style.css.map */

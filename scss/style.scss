@@ -81,24 +81,3 @@ a:focus {
 
 @include media-set;
 
-
-/* 
-@media (hover: hover) {
-  a:hover {
-    color: $highlight-color;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  @include mob-set;
-}
-
-@media screen and (max-width: 450px) {
-  @include mob-set;
-
-  iframe {
-    width: 100%;
-    height: auto;
-  }
-}
- */
